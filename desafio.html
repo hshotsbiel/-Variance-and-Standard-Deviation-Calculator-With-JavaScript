@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>    
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Número</th>
+                <th scope="col">Variância</th>
+                <th scope="col">Desvio Padrão</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="number" name="um" id="um"></td>
+                <td><div id="v1"></div></td>
+                <td><div id="d1"></div></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="dois" id="dois"></td>
+                <td><div id="v2"></div></td>
+                <td><div id="d2"></div></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="tres" id="tres"></td>
+                <td><div id="v3"></div></td>
+                <td><div id="d3"></div></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="quatro" id="quatro"></td>
+                <td><div id="v4"></div></td>
+                <td><div id="d4"></div></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="cinco" id="cinco"></td>
+                <td><div id="v5"></div></td>
+                <td><div id="d5"></div></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="seis" id="seis"></td>
+                <td><div id="v6"></div></td>
+                <td><div id="d6"></div></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="sete" id="sete"></td>
+                <td><div id="v7"></div></td>
+                <td><div id="d7"></div></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="oito" id="oito"></td>
+                <td><div id="v8"></div></td>
+                <td><div id="d8"></div></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="nove" id="nove"></td>
+                <td><div id="v9"></div></td>
+                <td><div id="d9"></div></td>
+            </tr>
+            <tr>
+                <td><input type="number" name="dez" id="dez"></td>
+                <td><div id="v10"></div></td>
+                <td><div id="d10"></div></td>
+            </tr>
+        </tbody>
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Total média</th>
+                <th scope="col">Total Variância</th>
+                <th scope="col">Total Desvio-Padrão</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><div id="totalM"></div></td>
+                <td><div id="totalV"></div></td>
+                <td><div id="totalD"></div></td>
+            </tr> 
+        </tbody> 
+    </table>
+    <button type="button" class="btn btn-warning btn-lg btn-block" onclick="resultado()">Clique aqui para calcular o resultado</button>
+    
+
+    <script>        
+    
+       function resultado() {
+
+        //media
+
+        var um = document.getElementById('um')
+        var umV = Number(um.value)
+
+        var dois = document.getElementById('dois')
+        var doisV = Number(dois.value)
+
+        var tres = document.getElementById('tres')
+        var tresV = Number(tres.value)
+
+        var quatro = document.getElementById('quatro')
+        var quatroV = Number(quatro.value)
+
+        var cinco = document.getElementById('cinco')
+        var cincoV = Number(cinco.value)
+
+        var seis = document.getElementById('seis')
+        var seisV = Number(seis.value)
+
+        var sete = document.getElementById('sete')
+        var seteV = Number(sete.value)
+
+        var oito = document.getElementById('oito')
+        var oitoV = Number(oito.value)
+
+        var nove = document.getElementById('nove')
+        var noveV = Number(nove.value)
+
+        var dez = document.getElementById('dez')
+        var dezV = Number(dez.value) 
+
+        var media = (umV + doisV + tresV + quatroV + cincoV + seisV + seteV + oitoV + noveV + dezV) / 10
+
+        var totalM = document.getElementById('totalM')
+        totalM.innerHTML = media
+
+        //variância
+
+        var v1 = document.getElementById('v1')
+        var v1R = umV - media
+        var quadradoV1 = Math.abs(v1R*v1R)
+        v1.innerHTML = quadradoV1
+        
+        var v2 = document.getElementById('v2')
+        var v2R = doisV - media
+        var quadradoV2 = Math.abs(v2R*v2R)
+        v2.innerHTML = quadradoV2
+
+        var v3 = document.getElementById('v3')
+        var v3R = tresV - media
+        var quadradoV3 = Math.abs(v3R*v3R)
+        v3.innerHTML = quadradoV3
+
+        var v4 = document.getElementById('v4')
+        var v4R = quatroV - media
+        var quadradoV4 = Math.abs(v4R*v4R)
+        v4.innerHTML = quadradoV4
+
+        var v5 = document.getElementById('v5')
+        var v5R = cincoV - media
+        var quadradoV5 = Math.abs(v5R*v5R)
+        v5.innerHTML = quadradoV5
+
+        var v6 = document.getElementById('v6')
+        var v6R = seisV - media
+        var quadradoV6 = Math.abs(v6R*v6R)
+        v6.innerHTML = quadradoV6
+
+        var v7 = document.getElementById('v7')
+        var v7R = seteV - media
+        var quadradoV7 = Math.abs(v7R*v7R)
+        v7.innerHTML = quadradoV7
+
+        var v8 = document.getElementById('v8')
+        var v8R = oitoV - media
+        var quadradoV8 = Math.abs(v8R*v8R)
+        v8.innerHTML = quadradoV8
+
+        var v9 = document.getElementById('v9')
+        var v9R = noveV - media
+        var quadradoV9 = Math.abs(v9R*v9R)
+        v9.innerHTML = quadradoV9
+
+        var v10 = document.getElementById('v10')
+        var v10R = dezV - media
+        var quadradoV10 = Math.abs(v10R*v10R)
+        v10.innerHTML = quadradoV10
+
+        var totalV = document.getElementById('totalV')
+        var variancia = (quadradoV1 + quadradoV2 + quadradoV3 + quadradoV4 + quadradoV5 + quadradoV6 + quadradoV7 + quadradoV8  + quadradoV9 + quadradoV10 ) / 9
+        totalV.innerHTML = variancia
+
+        //desvio-padrão
+
+        var d1 = document.getElementById('d1')        
+        var d1D = Math.sqrt(quadradoV1)
+        d1.innerHTML = d1D
+
+        var d2 = document.getElementById('d2')
+        var d2D = Math.sqrt(quadradoV2)
+        d2.innerHTML = d2D
+
+        var d3 = document.getElementById('d3')
+        var d3D = Math.sqrt(quadradoV3)
+        d3.innerHTML = d3D
+
+        var d4 = document.getElementById('d4')
+        var d4D = Math.sqrt(quadradoV4)
+        d4.innerHTML = d4D
+
+        var d5 = document.getElementById('d5')
+        var d5D = Math.sqrt(quadradoV5)
+        d5.innerHTML = d5D
+
+        var d6 = document.getElementById('d6')
+        var d6D = Math.sqrt(quadradoV6)
+        d6.innerHTML = d6D
+
+        var d7 = document.getElementById('d7')
+        var d7D = Math.sqrt(quadradoV7)
+        d7.innerHTML = d7D
+
+        var d8 = document.getElementById('d8')
+        var d8D = Math.sqrt(quadradoV8)
+        d8.innerHTML = d8D
+
+        var d9 = document.getElementById('d9')
+        var d9D = Math.sqrt(quadradoV9)
+        d9.innerHTML = d9D
+
+        var d10 = document.getElementById('d10')
+        var d10D = Math.sqrt(quadradoV10)
+        d10.innerHTML = d10D
+
+        var totalD = document.getElementById('totalD')
+        var desvioPadrao = Math.sqrt(variancia)
+        totalD.innerHTML = desvioPadrao
+    }
+
+    </script>
+
+    
+</body>
+</html>
